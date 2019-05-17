@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="row">
+  <div class="col">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <ul>
+      <li class="list-group-item" *ngFor="let person of form"[routerLink]="['/contact', person.Id]"
+          style="cursor: pointer">
+        <h3>Asunto:{{person.Id}}</h3><span class="badge badge-primary badge-pill">1 mensaje</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

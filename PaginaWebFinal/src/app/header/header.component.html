@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-sm navbar-expand-lg  fixed-top" >
+  <div class="logo">
+    <a style="color:#FAFAFA" >PGR</a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" >
+    <span class="navbar-toggler-icon my-toggler"></span>
+  </button>
+
+  <div class="collapse navbar-collapse"  id="navbarColor02">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Inicio</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a class="nav-link" style="cursor: pointer" (click)="scrollToElement('QuienSoy')">Quien Soy</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ">
+      <li>
+
+        <a class="nav-link" style="cursor: pointer" (click)="scrollToElement('Conocimientos')">Conocimientos</a>
+
+      </li>
+    </ul>
+        <ul class="navbar-nav">
+          <li>
+        <a class="nav-link"  style="cursor: pointer" (click)="scrollToElement('Experiencia')">Experiencia</a>
+      </li>
+        </ul>
+    <ul class="navbar-nav ">
+      <li>
+
+        <a class ="nav-link"  style="cursor: pointer" (click)="scrollToElement('Contacto')">Contacto</a>
+      </li>
+    </ul>
+    <!--
+    <ul class="navbar-nav ">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Idioma
+        </a>
+
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Español <img src="https://www.filmaffinity.com/imgs/countries/ES.jpg" alt=""></a>
+          <a class="dropdown-item" href="#">Ingles  <img src="https://www.filmaffinity.com/imgs/countries/US.jpg"alt=""> </a>
+        </div>
+      </li>
+    </ul>
+-->
+    <ul *ngIf="loggedUser == null" class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="login" target="_blank">Login</a>
+      </li>
+      <!--
+      <li class="nav-item">
+        <a class="nav-link" routerLink="register">Registro</a>
+      </li>
+      -->
+
+    </ul>
+    <ul *ngIf="loggedUser != null" class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop2" data-toggle="dropdown">
+          Bienvenido {{ loggedUser.nombre }}
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" (click)="logoutClicked()">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

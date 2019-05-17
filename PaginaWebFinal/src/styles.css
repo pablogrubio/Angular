@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.container{
+  margin-top: 100px;
+}
+
+h1{
+  letter-spacing: 1.6px;
+  font-weight: 300;
+}
+
+.section-title h3{
+  font-size: 50px;
+  font-weight: 900;
+
+}

@@ -1,0 +1,108 @@
+
+<div id="Contacto">
+  <h3 style="color:white">contacto</h3>
+</div>
+<div class="container">
+  <section>
+    <div class="section-title">
+      <h3  class="text-center">Contacto </h3>
+    </div>
+    <br>
+    <br>
+
+    <form  [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" class="form-control " formControlName="name" id="inputName" placeholder="Introduce tu nombre" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" required="True">
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+          <div *ngIf="f.name.errors.required">Introduzca un nombre</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ask">Asunto</label>
+        <input type="ask" class="form-control " formControlName="ask" id="inputAsk" placeholder="Asunto de contacto" [ngClass]="{ 'is-invalid': submitted && f.ask.errors }" required>
+        <div *ngIf="submitted && f.ask.errors" class="invalid-feedback">
+          <div *ngIf="f.ask.errors.required">Introduzca un asunto</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputMail">Correo Electronico</label>
+        <input type="email" class="form-control " formControlName="email" id="inputEmail" placeholder="Introduce tu email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required>
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Introduzca un email</div>
+          <div *ngIf="f.email.errors.email">El email debe ser un email valido</div>
+        </div>
+      </div>
+
+      <button type="submit"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Enviar</button>
+
+      <!-- Modal -->
+      <div *ngIf="submitted">
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Formulario enviado correctamente</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Muchas gracias por contactar.
+              Me pondre en contacto contigo proximamente.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert" role="alert" id="result"></div>
+      </div>
+    </form>
+
+     <button type="Enviar" href="/images/myw3schoolsimage.jpg" class="btn btn-warning" >Descargar Cv
+       <a href="/images/myw3schoolsimage.jpg" download></a>
+     </button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+  </section>
+  <div class="d-flex justify-content-center">
+
+    <div class="cardBox">
+      <div class="card facebook">
+        <div class="card-front"><i class="fab fa-facebook"></i></div>
+        <a href="https://www.facebook.com/profile.php?id=100005032363736">>
+          <div class="card-back">Facebook</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="cardBox">
+      <div class="card instagram">
+        <div class="card-front"><i class="fab fa-instagram"></i></div>
+        <a href="https://www.instagram.com/pablogrubio/?hl=es">
+          <div class="card-back">Instagram</div>
+        </a>
+      </div>
+    </div>
+
+
+    <div class="cardBox">
+      <div class="card linkedin">
+        <div class="card-front"><i class="fab fa-linkedin"></i></div>
+        <a href="https://www.linkedin.com/in/pablo-garc%C3%ADa-rubio-4739ba158/">
+          <div class="card-back">Linkedin</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+</div>
